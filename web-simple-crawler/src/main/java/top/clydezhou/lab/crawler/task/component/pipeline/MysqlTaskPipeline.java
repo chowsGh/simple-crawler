@@ -73,7 +73,10 @@ public class MysqlTaskPipeline extends CrawlTaskPipeline {
         String crawlData = null;
         try {
             Object dataObj = getCrawledData(resultItems);
-            if(dataObj instanceof String) {
+            if(dataObj == null) {
+                //TODO 数据为空
+                crawlData = null;
+            } else if(dataObj instanceof String) {
                 crawlData = (String)dataObj;
             } else if (dataObj instanceof byte[]) {
                 //TODO 暂时不支持非文本类型的数据
