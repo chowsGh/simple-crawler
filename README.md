@@ -35,7 +35,7 @@ web-simple-crawler-admin 前端管理界面是基于[vue-admin-template](https:/
 - 数据库保存的url以及数据
   
   ![demo-url](asset/demo-url.png)
-  ![start](asset\demo-data.png)
+  ![demo-data](asset/demo-data.png)
   
 - 关闭爬虫
 
