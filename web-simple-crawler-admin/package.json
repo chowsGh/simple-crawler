@@ -1,6 +1,5 @@
 {
   "name": "web-simple-crawl-admin",
-  "version": "0.01",
   "license": "MIT",
   "description": "crawler admin application based on vue-admin-template(https://github.com/PanJiaChen/vue-admin-template)",
   "author": "clyde zhou <chows_ne@126.com>",
