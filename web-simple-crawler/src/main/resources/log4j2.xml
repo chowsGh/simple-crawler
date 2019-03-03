@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--启动项设置为 trace，加载 springboot 启动内部各种详细输出 -->
+<Configuration status="trace">
+	<properties>
+		<property name="common-log-pattern">[%p] %d [%t] %c{-2} - %m%n</property>
+	</properties>
+	<Appenders>
+		<!--添加一个控制台追加器 -->
+		<Console name="Console" target="SYSTEM_OUT" follow="true">
+			<PatternLayout>
+				<pattern>${common-log-pattern}</pattern>
+			</PatternLayout>
+		</Console>
+
+		<RollingFile name="RollingFile" fileName="logs/app.log"
+			filePattern="logs/app-%d{MM-dd-yyyy}-%i.log">
+			<PatternLayout>
+				<Pattern>${common-log-pattern}</Pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="20 MB" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="top.clydezhou" level="debug">
+            <AppenderRef ref="Console" />
+        </Logger>
+		<!--根记录全部输出到控制台上 -->
+		<Root level="debug">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="RollingFile" />
+		</Root>
+	</Loggers>
+</Configuration>

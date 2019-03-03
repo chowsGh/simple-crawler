@@ -1,0 +1,50 @@
+server:
+  port: 18080
+  servlet:
+    context-path: /simple-web-crawler
+
+#jdbc
+spring:
+  datasource:
+    # %2B是 '+' 的encode后的字符
+    url: jdbc:mysql://localhost:3306/crawlerdb?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: -pl,0OKM
+  jackson:
+    default-property-inclusion: NON_NULL
+#mvc
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+    servlet:
+      content-type: text/html
+
+#mybatis
+mybatis:
+  mapper-locations: classpath:mappers/**/*.xml
+  type-aliases-package: top.clydezhou.lab.crawler
+  configuration:
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+
+#mybatis.tk 通用mapper
+mapper:
+  mappers: top.clydezhou.lab.crawler.common.dao.mapper.BaseMapper
+  identity: mysql
+  style: lowercase
+
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+#打印sql日志
+logging:
+  config: classpath:log4j2.xml 
+
+#management:
+#  endpoint:
+#    shutdown:
+#      enabled: true
+#      
+##扫描基类接口
