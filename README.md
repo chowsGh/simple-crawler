@@ -22,22 +22,24 @@ web-simple-crawler-admin 前端管理界面是基于[vue-admin-template](https:/
 
 测试用数据是指定爬取某个猎聘搜索页面的数据
 
+![home-page](asset/home-page.png)
+
 - 测试配置
 
-  ![demo-param-json](asset\demo-param-json.png)
+  ![demo-param-json](asset/demo-param-json.png)
 
 - 启动爬虫
 
-  ![start](asset\start.png)
+  ![start](asset/start.png)
 
 - 数据库保存的url以及数据
   
-  ![start](asset\demo-url.png)
+  ![demo-url](asset/demo-url.png)
   ![start](asset\demo-data.png)
   
 - 关闭爬虫
 
-  ![shutdown](asset\shutdown.png)
+  ![shutdown](asset/shutdown.png)
 
 ## 部署安装
 
